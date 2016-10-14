@@ -3,9 +3,11 @@ package sbin.com.actionbartab;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,6 +22,14 @@ public class ActivityTabbed extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_tabbed);
+
+        // Set toolbar to support activity_tabbed.xml -
+        // this supports android.support.design.widget.AppBarLayout and android.support.v7.widget.Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_tabbed);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle("Tabbed Action Bar - sbin");
 
         /*ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);

@@ -13,18 +13,18 @@
         android:title="Tabbed Partial"
         app:srcCompat="@drawable/ic_action_action_cached"
         android:orderInCategory="101"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
     <item
         android:id="@+id/menuList"
         android:title="List"
         app:srcCompat="@drawable/ic_action_action_favorite"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:orderInCategory="102"
         />
     <item
         android:id="@+id/menuListPartial"
         android:title="List Partial"
-        app:showAsAction="always"
+        app:showAsAction="never"
         tools:ignore="AppCompatResource"
         android:orderInCategory="103"
         app:srcCompat="@drawable/ic_launcher"
@@ -35,13 +35,13 @@
         android:orderInCategory="104"
         android:title="@string/action_settings"
         app:srcCompat="@android:drawable/ic_menu_send"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/main_menu_exit"
         android:title="Exit"
         app:srcCompat="@drawable/ic_action_av_high_quality"
-        app:showAsAction="always"
+        app:showAsAction="never"
         android:orderInCategory="105"
         android:layout_width="match_parent" />
 
