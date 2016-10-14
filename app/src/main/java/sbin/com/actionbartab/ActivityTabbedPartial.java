@@ -1,7 +1,8 @@
 package sbin.com.actionbartab;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 /**
@@ -11,14 +12,20 @@ import android.util.Log;
  * Time: 10:35 AM
  * To change this template use File | Settings | File Templates.
  */
-public class ActivityTabbedPartial extends Activity {
+public class ActivityTabbedPartial extends AppCompatActivity {
     private static final String LOG_TAG = "ActivityTabbedPartial";
 
-    public void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.i(LOG_TAG,"Activity Tabbed Partial page is showing");
+    }
+
+    /* public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         //setContentView(R.layout.activity_part_selectable_part_fixed);
         Log.i(LOG_TAG,"Activity Tabbed Partial page is showing");
-    }
+    }*/
 
 }

@@ -3,44 +3,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="sbin.com.actionbartab.MainActivity">
     <item
-        android:id="@+id/mainSetting"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="ifRoom|withText" />
-
-    <item
         android:id="@+id/menuTabbed"
         android:title="Tabbed"
-        android:icon="@drawable/ic_action_action_cached"
-        android:showAsAction="ifRoom|withText"
-        tools:ignore="AppCompatResource" />
+        android:orderInCategory="100"
+        app:srcCompat="@drawable/ic_action_action_favorite"
+        app:showAsAction="ifRoom|withText" />
     <item
         android:id="@+id/menuTabbedPartial"
         android:title="Tabbed Partial"
-        android:icon="@drawable/ic_action_social_cake"
-        android:showAsAction="ifRoom|withText"
-        tools:ignore="AppCompatResource" />
+        app:srcCompat="@drawable/ic_action_action_cached"
+        android:orderInCategory="101"
+        app:showAsAction="always" />
     <item
         android:id="@+id/menuList"
         android:title="List"
-        android:icon="@drawable/ic_action_action_favorite"
-        android:showAsAction="ifRoom|withText"
-        tools:ignore="AppCompatResource"
+        app:srcCompat="@drawable/ic_action_action_favorite"
+        app:showAsAction="always"
+        android:orderInCategory="102"
         />
     <item
         android:id="@+id/menuListPartial"
         android:title="List Partial"
-        android:showAsAction="ifRoom|withText"
+        app:showAsAction="always"
         tools:ignore="AppCompatResource"
-        android:icon="@drawable/ic_launcher"
+        android:orderInCategory="103"
+        app:srcCompat="@drawable/ic_launcher"
         />
+
+    <item
+        android:id="@+id/mainSetting"
+        android:orderInCategory="104"
+        android:title="@string/action_settings"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/main_menu_exit"
         android:title="Exit"
-        android:icon="@drawable/ic_action_av_high_quality"
-        android:showAsAction="ifRoom"
-        tools:ignore="AppCompatResource"
+        app:srcCompat="@drawable/ic_action_av_high_quality"
+        app:showAsAction="always"
+        android:orderInCategory="105"
         android:layout_width="match_parent" />
 
 </menu>

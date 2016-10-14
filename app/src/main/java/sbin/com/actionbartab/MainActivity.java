@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.mainSetting:
+                Toast.makeText(this,"Setting clicked",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.menuTabbed:
                 onTabbedClick();
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.main_menu_exit:
                 onExitClick();
                 break;
+
             default:
                 break;
         }
