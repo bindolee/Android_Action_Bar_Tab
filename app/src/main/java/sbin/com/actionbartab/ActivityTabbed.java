@@ -2,6 +2,9 @@ package sbin.com.actionbartab;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -19,24 +22,37 @@ import android.widget.Toast;
 public class ActivityTabbed extends AppCompatActivity {
     private static final String LOG_TAG = "ActivityTabbed";
 
+    private ViewPager viewPager;
+    private PagerAdapter pagerAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbed);
+        //you can re-use the activity_main xml layout ... if you want.
 
         // Set toolbar to support activity_tabbed.xml -
         // this supports android.support.design.widget.AppBarLayout and android.support.v7.widget.Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_tabbed);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("Tabbed Action Bar - sbin");
+        getSupportActionBar().setTitle("Action Bar Tab");
+        getSupportActionBar().setSubtitle("sbin");
+        getSupportActionBar().setLogo(R.drawable.pluralsight_logo_whiteback);
 
-        /*ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-        */
+        // Set ViewPager into android.support.v4.view.ViewPager@id container_tabbed
+        // As per android development guide, viewpager need PagerAdapter
+        viewPager = (ViewPager) findViewById(R.id.container_tabbed);
+        viewPager.setAdapter(pagerAdapter);
+
+        //Set up TabLayout to android.support.design.widget.TabLayout with @id tabs_tabbed
+        //TabLayout needs to be viewered with android.support.v4.view.ViewPager
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs_tabbed);
+        tabLayout.setupWithViewPager(viewPager);
 
     }
 
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_tab_control, menu);
