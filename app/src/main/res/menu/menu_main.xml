@@ -1,0 +1,46 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="sbin.com.actionbartab.MainActivity">
+    <item
+        android:id="@+id/mainSetting"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/menuTabbed"
+        android:title="Tabbed"
+        android:icon="@drawable/ic_action_action_cached"
+        android:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/menuTabbedPartial"
+        android:title="Tabbed Partial"
+        android:icon="@drawable/ic_action_social_cake"
+        android:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource" />
+    <item
+        android:id="@+id/menuList"
+        android:title="List"
+        android:icon="@drawable/ic_action_action_favorite"
+        android:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource"
+        />
+    <item
+        android:id="@+id/menuListPartial"
+        android:title="List Partial"
+        android:showAsAction="ifRoom|withText"
+        tools:ignore="AppCompatResource"
+        android:icon="@drawable/ic_launcher"
+        />
+
+    <item
+        android:id="@+id/main_menu_exit"
+        android:title="Exit"
+        android:icon="@drawable/ic_action_av_high_quality"
+        android:showAsAction="ifRoom"
+        tools:ignore="AppCompatResource"
+        android:layout_width="match_parent" />
+
+</menu>
