@@ -21,7 +21,8 @@
 
         <activity
             android:name=".ActivityTabbed"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="sbin.com.actionbartab.MainActivity" >
         </activity>
 
         <activity android:name=".ActivityTabbedPartial" />

@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -47,6 +48,9 @@ public class ActivityTabbed extends AppCompatActivity {
         getSupportActionBar().setSubtitle("sbin");
         getSupportActionBar().setLogo(R.drawable.pluralsight_logo_whiteback);
 
+        //To navigate to go back....also modify menifest xml as well and this will be caught from onOptionItemselected call back function
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // initiate sectionPagerAdatper which extends FragmentPagerAdapter -- PagerAdapter is replaced by this
         sectionPA = new sectionPagerAdatper(getSupportFragmentManager());
 
@@ -76,6 +80,10 @@ public class ActivityTabbed extends AppCompatActivity {
             case R.id.menuToggleTitle:
                 Toast.makeText(this,"Activity's Menu toggle clicked",Toast.LENGTH_SHORT).show();
                 break;
+            // this is for catching setDisplayHomeAsUpEnabled
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                break;
             default:
                 break;
 
@@ -96,13 +104,32 @@ public class ActivityTabbed extends AppCompatActivity {
             //Using fragment class not fragment actitvity, needs to override View::createView() function.. instead of onCreate
             // So, declar View vaiable and return it...
             View rootview = inflater.inflate(R.layout.fragment_from_tab, container, false);
-
-            //Call findviewByid from rootview as inner function and case it to textview
-            TextView tv = (TextView) rootview.findViewById(R.id.textview_from_frag_tab);
-            tv.setText("Hello from SBIN tab fragment action bar");
-            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            displayTabtext(rootview);
             return rootview;
 
+        }
+
+        public void displayTabtext(View rootview) {
+            //Call findviewByid from rootview as inner function and case it to textview
+            TextView tv = (TextView) rootview.findViewById(R.id.textview_from_frag_tab);
+
+            int tabId = getArguments().getInt(ARG_TAB_SECTION_NUMBER);
+            switch (tabId){
+                case 0:
+                    tv.setText("Boring.. what the.. 1st");
+                    return;
+                case 1:
+                    tv.setText("Need feed ..where am I .. 2nd");
+                    return;
+                case 2:
+                    tv.setText("Want to work.. really 3rd");
+                    return;
+                default:
+                    return;
+            }
+
+
+            //textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
         }
 
         // populating newInstance method instead of calling this class from activitytabbed.
