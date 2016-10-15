@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="sbin.com.actionbartab.Fragments.ActivityTab_Fragment">
+    tools:context="sbin.com.actionbartab.ActivityTabbed">
 
     <TextView
         android:layout_width="wrap_content"
